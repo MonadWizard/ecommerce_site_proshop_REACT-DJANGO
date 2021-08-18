@@ -2,6 +2,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import products from '../products';
+import Product from '../components/Product';
 
 function HomeScreen() {
     // const [products, setProducts] = useState([]);
@@ -22,8 +23,8 @@ function HomeScreen() {
                 {products.map((product) => (
                     // in grid totat 12 eatch xl take 3 , each sm take all
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                        <h3> {product.name} </h3>
-                        {/* <Product product={product} /> */}
+                        {/* <h3> {product.name} </h3> */}
+                        <Product product={product} />
                     </Col>
                 ))}
             </Row>

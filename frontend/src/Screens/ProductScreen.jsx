@@ -1,23 +1,26 @@
+/* eslint-disable no-underscore-dangle */
 // import products from '../products'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+import React from 'react';
 import { Button, Card, Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
+import products from '../products';
 
 function ProductScreen({ match }) {
-    // const product = products.find((p) => p._id == match.params.id)
+    // eslint-disable-next-line eqeqeq
+    const product = products.find((p) => p._id == match.params.id);
 
-    const [product, setProduct] = useState([]);
+    // const [product, setProduct] = useState([]);
 
-    useEffect(() => {
-        async function fetchProduct() {
-            const { data } = await axios.get(`/api/products/${match.params.id}`);
-            setProduct(data);
-        }
+    // useEffect(() => {
+    //     async function fetchProduct() {
+    //         const { data } = await axios.get(`/api/products/${match.params.id}`);
+    //         setProduct(data);
+    //     }
 
-        fetchProduct();
-    }, [match.params.id]);
+    //     fetchProduct();
+    // }, [match.params.id]);
 
     return (
         <div>
@@ -46,7 +49,9 @@ function ProductScreen({ match }) {
 
                         <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
 
-                        <ListGroup.Item>Description: {product.description}</ListGroup.Item>
+                        <ListGroup.Item>
+                            <p>Description: ${product.description} </p>
+                        </ListGroup.Item>
                     </ListGroup>
                 </Col>
 
