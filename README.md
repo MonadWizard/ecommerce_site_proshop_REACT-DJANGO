@@ -1,6 +1,11 @@
 Proshop DJANGO-REACT ecommerce applicarion
 
-complete products and product_details page version 0.2
+complete products and product_details page with backend using django-cors-headers and axios `version 0.2`
+
+Done:
+
+-   added django-cors-headers and complete settings
+-   added axios and convert to useState & useEffect
 
 The backend ports are
 
