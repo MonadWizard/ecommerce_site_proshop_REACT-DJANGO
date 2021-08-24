@@ -1,26 +1,23 @@
-/* eslint-disable no-underscore-dangle */
-// import products from '../products'
-// import axios from 'axios';
-import React from 'react';
+/* eslint-disable prettier/prettier */
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
-import products from '../products';
 
 function ProductScreen({ match }) {
-    // eslint-disable-next-line eqeqeq
-    const product = products.find((p) => p._id == match.params.id);
+    const [product, setProduct] = useState([]);
 
-    // const [product, setProduct] = useState([]);
+    useEffect(() => {
+        async function fetchProduct() {
+            const { data } = await axios.get(
+                `/api/products/${match.params.id}`
+            );
+            setProduct(data);
+        }
 
-    // useEffect(() => {
-    //     async function fetchProduct() {
-    //         const { data } = await axios.get(`/api/products/${match.params.id}`);
-    //         setProduct(data);
-    //     }
-
-    //     fetchProduct();
-    // }, [match.params.id]);
+        fetchProduct();
+    }, [match.params.id]);
 
     return (
         <div>
@@ -72,7 +69,9 @@ function ProductScreen({ match }) {
                                     <Col>Status:</Col>
                                     <Col>
                                         <strong>
-                                            {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                            {product.countInStock > 0
+                                                ? 'In Stock'
+                                                : 'Out of Stock'}
                                         </strong>
                                     </Col>
                                 </Row>

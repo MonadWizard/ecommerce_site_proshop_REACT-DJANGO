@@ -1,20 +1,20 @@
-/* eslint-disable no-underscore-dangle */
-import React from 'react';
+/* eslint-disable prettier/prettier */
+import React, { useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import products from '../products';
+import axios from 'axios';
 import Product from '../components/Product';
 
 function HomeScreen() {
-    // const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
-    // useEffect(() => {
-    //     async function fetchProducts() {
-    //         const { data } = await axios.get('/api/products/');
-    //         setProducts(data);
-    //     }
+    useEffect(() => {
+        async function fetchProducts() {
+            const { data } = await axios.get('/api/products/');
+            setProducts(data);
+        }
 
-    //     fetchProducts();
-    // }, []);
+        fetchProducts();
+    }, []);
 
     return (
         <div>
@@ -22,6 +22,7 @@ function HomeScreen() {
             <Row>
                 {products.map((product) => (
                     // in grid totat 12 eatch xl take 3 , each sm take all
+                    // eslint-disable-next-line no-underscore-dangle
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                         {/* <h3> {product.name} </h3> */}
                         <Product product={product} />
