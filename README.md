@@ -4,18 +4,19 @@ complete products and product_details page with backend using django-cors-header
 
 Done:
 
--   added django-cors-headers and complete settings
--   added axios and convert to useState & useEffect
+-   complete all models and product data get from product table
 
 The backend ports are
 
-| Method | Route                   |
-| ------ | ----------------------- |
-| GET    | /api/products           |
-| GET    | /api/products/25        |
+| Method | Route            |
+| ------ | ---------------- |
+| GET    | /api/products    |
+| GET    | /api/products/25 |
+
+<!--
 | POST   | /api/products/create    |
 | PUT    | /api/products/update/25 |
-| DELETE | /api/products/delete/25 |
+| DELETE | /api/products/delete/25 | -->
 
 <br> <br>
 
