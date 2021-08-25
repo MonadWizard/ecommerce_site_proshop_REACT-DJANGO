@@ -7,12 +7,12 @@ Done:
 -   added django-cors-headers and complete settings
 -   added axios and convert to useState & useEffect
 
-The backend ports are
-<!-- 
+The backend ports are with rest but no database table
 | Method | Route                   |
 | ------ | ----------------------- |
 | GET    | /api/products           |
 | GET    | /api/products/25        |
+<!-- 
 | POST   | /api/products/create    |
 | PUT    | /api/products/update/25 |
 | DELETE | /api/products/delete/25 | -->
