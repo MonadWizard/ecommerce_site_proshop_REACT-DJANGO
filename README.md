@@ -8,14 +8,14 @@ Done:
 -   added axios and convert to useState & useEffect
 
 The backend ports are
-
+<!-- 
 | Method | Route                   |
 | ------ | ----------------------- |
 | GET    | /api/products           |
 | GET    | /api/products/25        |
 | POST   | /api/products/create    |
 | PUT    | /api/products/update/25 |
-| DELETE | /api/products/delete/25 |
+| DELETE | /api/products/delete/25 | -->
 
 <br> <br>
 <!-- 
