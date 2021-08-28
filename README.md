@@ -4,7 +4,14 @@ complete products and product_details page with backend using django-cors-header
 
 Done:
 
--   complete all models and product data get from product table
+-   complete redux to products and productDetail pages
+
+need to install
+
+-   redux
+-   react-redux
+-   redux-thunk
+-   redux-devtools-extension
 
 The backend ports are
 
@@ -20,6 +27,6 @@ The backend ports are
 
 <br> <br>
 
-[database dyagram link:](https://drawsql.app/monad-wizard/diagrams/ecommerce-proshop)
+<!-- [database dyagram link:](https://drawsql.app/monad-wizard/diagrams/ecommerce-proshop)
 
-![image](https://drive.google.com/uc?export=view&id=1EWnKfyhlqU75s_IBe5_zEQZlNv_cwIpC)
+![image](https://drive.google.com/uc?export=view&id=1EWnKfyhlqU75s_IBe5_zEQZlNv_cwIpC) -->
