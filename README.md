@@ -1,24 +1,25 @@
 Proshop DJANGO-REACT ecommerce applicarion
 
-complete products and product_details page with backend using django-cors-headers and axios `version 0.2`
+complete products and product_details page with backend using django-cors-headers and axios `version 0.5`
 
-Done:
+Done: (cart)
 
--   complete redux to products and productDetail pages
-
-need to install
-
--   redux
--   react-redux
--   redux-thunk
--   redux-devtools-extension
+-   complete redux to Add To Cart (save to local storage so user can go back and continue pervious purching)
+-   complete redux to Remove from Cart (save to local storage so user can go back and continue pervious purching)
 
 The backend ports are
 
+FontEnd:
+
+    <Route path="/" component={HomeScreen} exact />
+    <Route path="/product/:id" component={ProductScreen} />
+    <Route path="/cart/:id?" component={CartScreen} />
+
+<!--
 | Method | Route            |
 | ------ | ---------------- |
 | GET    | /api/products    |
-| GET    | /api/products/25 |
+| GET    | /api/products/25 | -->
 
 <!--
 | POST   | /api/products/create    |

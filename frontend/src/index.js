@@ -5,7 +5,7 @@ import store from './store';
 
 import App from './App';
 import './index.css';
-import './Static_file/bootswatch_Morph/bootstrap.min.css';
+import './Static_file/bootswatch_Lux/bootstrap.min.css';
 
 ReactDOM.render(
     <Provider store={store}>

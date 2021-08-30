@@ -1,7 +1,15 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable prettier/prettier */
-import React, { useEffect } from 'react';
-import { Button, Card, Col, Image, ListGroup, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import {
+    Button,
+    Card,
+    Col,
+    Image,
+    ListGroup,
+    Row,
+    Form,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../components/Rating';
@@ -10,13 +18,20 @@ import { listProductDetails } from '../actions/productAction';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-function ProductScreen({ match }) {
+function ProductScreen({ match, history }) {
+    const [qty, setQty] = useState(1);
+
     const dispatch = useDispatch();
     const productDetails = useSelector((state) => state.productDetails);
     const { loading, error, product } = productDetails;
     useEffect(() => {
         dispatch(listProductDetails(match.params.id));
     }, [dispatch, match.params.id]);
+
+    const addToCartHandler = () =>{
+        console.log('Add to cart:', match.params.id)
+        history.push(`/cart/${match.params.id}?qty=${qty}`)
+    }
 
     return (
         <div>
@@ -76,7 +91,7 @@ function ProductScreen({ match }) {
                                         <Col>Status:</Col>
                                         <Col>
                                             <strong>
-                                                {product.countInStock > 0
+                                                {product.countinStock > 0
                                                     ? 'In Stock'
                                                     : 'Out of Stock'}
                                             </strong>
@@ -84,10 +99,42 @@ function ProductScreen({ match }) {
                                     </Row>
                                 </ListGroup.Item>
 
+                                {product.countinStock > 0 && (
+                                    <ListGroup.Item>
+                                        <Row>
+                                            <Col> Qty </Col>
+                                            <Col xs="auto" className="my-1">
+                                                <Form.Control
+                                                    as="select"
+                                                    value={qty}
+                                                    onChange={(e) =>
+                                                        setQty(e.target.value)
+                                                    }
+                                                >
+                                                    {[
+                                                        ...Array(
+                                                            product.countinStock
+                                                        ).keys(),
+                                                    ].map((x) => (
+                                                        <option
+                                                            key={x + 1}
+                                                            value={x + 1}
+                                                        >
+                                                            {x + 1}
+                                                        </option>
+                                                    ))}
+                                                </Form.Control>
+                                                
+                                            </Col>
+                                        </Row>
+                                    </ListGroup.Item>
+                                )}
+
                                 <ListGroup.Item>
                                     <Button
+                                        onClick={addToCartHandler }
                                         className="btn-block"
-                                        disabled={product.countInStock === 0}
+                                        disabled={product.countinStock === 0}
                                         type="button"
                                     >
                                         {' '}

@@ -5,7 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 function Header() {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand> MonadWizard </Navbar.Brand>
