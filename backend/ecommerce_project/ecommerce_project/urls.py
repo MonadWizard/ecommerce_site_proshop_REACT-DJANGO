@@ -21,7 +21,12 @@ from django.conf.urls.static import static  # for connect static url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('base_app.urls')),
+    # path('api/', include('base_app.urls')),
+    path('api/products/', include('base_app.urls.product_urls')),
+    path('api/users/', include('base_app.urls.user_urls')),
+    path('api/orders/', include('base_app.urls.order_urls')),
+
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # for pool-up static file with full url
