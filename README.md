@@ -4,16 +4,12 @@ complete products and product_details page with backend using django-cors-header
 
 Done: (cart)
 
--   complete redux to Add To Cart (save to local storage so user can go back and continue pervious purching)
--   complete redux to Remove from Cart (save to local storage so user can go back and continue pervious purching)
+-   user Authentication and Authorization
+-   Use JWT customization (add auth token)
+-   Use Signals to customize mail as user_name
+-   Separate all views and urls to folder and make specific for user, product, order
 
 The backend ports are
-
-FontEnd:
-
-    <Route path="/" component={HomeScreen} exact />
-    <Route path="/product/:id" component={ProductScreen} />
-    <Route path="/cart/:id?" component={CartScreen} />
 
 <!--
 | Method | Route            |
