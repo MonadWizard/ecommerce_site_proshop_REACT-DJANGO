@@ -1,10 +1,16 @@
 Proshop DJANGO-REACT ecommerce applicarion
 
-complete user profile page on front-ends using django-cors-headers and axios `version 0.7`
+complete products and product_details page with backend using django-cors-headers and axios `version 0.6`
 
+-   user Authentication and Authorization
+-   Use JWT customization (add auth token)
+-   Use Signals to customize mail as user_name
+-   Separate all views and urls to folder and make specific for user, product, order
+
+<!--
 Done: (cart)
 
--   login & registration with user detail api call (work with user reducer action and login)
+-   login & registration with user detail api call (work with user reducer action and login) -->
 
 -
 -
